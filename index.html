@@ -864,15 +864,33 @@
     }
   
   /* ── TESTIMONIANZE LINKEDIN ── */
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 900px) {
+    .testi-grid { grid-template-columns: 1fr; }
+  }
+  .testi-card {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
   .testi-card--linkedin .testi-card__header {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
   }
   .testi-card__avatar {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: var(--accent);
     color: #fff;
@@ -880,7 +898,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     flex-shrink: 0;
   }
   .testi-card__meta {
@@ -888,35 +906,57 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 0;
   }
   .testi-card__name {
-    font-size: 0.95rem;
-    color: var(--ink);
+    font-size: 0.9rem;
+    color: #ffffff;
+    font-weight: 600;
   }
   .testi-card__role {
-    font-size: 0.78rem;
-    color: var(--ink-2);
+    font-size: 0.73rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.4;
   }
   .testi-card__date {
-    font-size: 0.75rem;
-    color: var(--ink-2);
-    opacity: 0.75;
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 1px;
   }
   .testi-card__linkedin-icon {
     flex-shrink: 0;
     margin-top: 2px;
   }
+  .testi-card__stars {
+    color: #fbbf24;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+  .testi-card__quote {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    flex: 1;
+  }
+  .testi-card__author {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
 
   /* ── VIDEO TESTIMONIANZA ── */
   .video-testi {
-    background: var(--bg);
+    background: var(--bg-soft);
   }
   .video-testi__wrapper {
-    max-width: 720px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 2.5rem auto 0;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.15);
     aspect-ratio: 16/9;
     background: #000;
   }
@@ -926,17 +966,11 @@
     border: none;
     display: block;
   }
-  .video-testi__placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    background: var(--bg-soft);
-    color: var(--ink-2);
-    font-size: 1rem;
+  .video-testi__caption {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--ink-3);
   }
 
 </style>
@@ -971,7 +1005,7 @@
           <ul class="hero__proof-list">
             <li>
               <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Certificato PMP® — PMI (2025)
+              Certificato PMP® — PMI (2026)
             </li>
             <li>
               <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
@@ -981,10 +1015,7 @@
               <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
               5 anni in agenzie digitali
             </li>
-            <li>
-              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-              Capacità operativa +50% in 18 mesi
-            </li>
+            
           </ul>
 
           <div class="hero__cta-row" id="cta-hero">
@@ -1309,24 +1340,23 @@
     <div class="container">
       <div class="head fade-up">
         <span class="eyebrow">Testimonianze</span>
-        <h2>Cosa dicono le agenzie con cui ho lavorato</h2>
+        <h2>Cosa dicono le persone con cui ho lavorato</h2>
       </div>
 
-      <div class="testi-slider">
-        <div class="testi-track" id="testi-track">
+      <div class="testi-grid">
           <div class="testi-card testi-card--linkedin">
             <div class="testi-card__header">
               <div class="testi-card__avatar">LO</div>
               <div class="testi-card__meta">
                 <strong class="testi-card__name">Luca Orlandini</strong>
                 <span class="testi-card__role">+500 Landing Page &amp; Funnel · FuturImmagine.com</span>
-                <span class="testi-card__date">30 aprile 2025 · Manager diretto</span>
+                <span class="testi-card__date">aprile 2025 · manager diretto</span>
               </div>
               <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </div>
             <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"Ho capito che Andrea era una persona da avere nel team fin dal primo colloquio. La sua energia e la sua voglia di mettersi in gioco superavano qualsiasi altra cosa. Ho deciso di scommettere comunque su di lui perché non potevo lasciarmi sfuggire una persona con un potenziale così evidente. Bene, è stata una delle scelte più azzeccate da quando ho fondato l'energia. Oggi ricopre con piena autonomia e grande efficacia il ruolo di Project Manager. Io come imprenditore non mi occupo più di clickup, di gestire l'ordinarietà e di preoccuparmi per le delivery: è tutto in carico ad Andrea."</p>
-            <span class="testi-card__author">— Luca Orlandini, Founder · FuturImmagine.com · 2025</span>
+            <p class="testi-card__quote">"Ho capito che Andrea era una persona da avere nel team fin dal primo colloquio. La sua energia e la voglia di mettersi in gioco superavano qualsiasi altra cosa. Ho deciso di scommettere comunque su di lui perché non potevo lasciarmi sfuggire una persona con un potenziale così evidente. Bene, è stata una delle scelte più azzeccate da quando ho fondato l'agenzia. Oggi ricopre con piena autonomia e grande efficacia il ruolo di Project Manager — io non mi occupo più di ClickUp, dell'ordinarietà e delle delivery: è tutto in carico ad Andrea."</p>
+            <span class="testi-card__author">Luca Orlandini · Founder, FuturImmagine.com</span>
           </div>
           <div class="testi-card testi-card--linkedin">
             <div class="testi-card__header">
@@ -1334,13 +1364,13 @@
               <div class="testi-card__meta">
                 <strong class="testi-card__name">Antonio Benedetto</strong>
                 <span class="testi-card__role">Copywriter &amp; Consulente LinkedIn Certificato</span>
-                <span class="testi-card__date">1 novembre 2024 · Stesso team</span>
+                <span class="testi-card__date">novembre 2024 · stesso team</span>
               </div>
               <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </div>
             <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"Lavorare con Andrea significa non avere stress e poter fare meglio e con risultati superiori. Il lunedì in agenzia per me era il terrore — iniziavo a pensarci dalla domenica. Un PM che sa organizzare il lavoro del copy, che sa gestire clienti, che sa come relazionarsi con il team e i superiori fa la DIFFERENZA. Ed Andrea è proprio questo, un PROFESSIONISTA che fa la DIFFERENZA. Grazie a lui, il mio lavoro è perfettamente organizzato, non ci sono mai spiacevoli sorprese e posso confrontarmi con lui in qualsiasi momento. Indubbiamente il miglior PM con cui ho lavorato in 5 anni d'esperienza in agenzia."</p>
-            <span class="testi-card__author">— Antonio Benedetto, Copywriter · 2024</span>
+            <p class="testi-card__quote">"Lavorare con Andrea significa non avere stress e poter fare meglio con risultati superiori. Il lunedì in agenzia per me era il terrore — iniziavo a pensarci dalla domenica. Un PM che sa organizzare il lavoro del copy, gestire i clienti e relazionarsi con il team fa la DIFFERENZA. Ed Andrea è proprio questo: grazie a lui il mio lavoro è perfettamente organizzato, non ci sono mai spiacevoli sorprese e posso confrontarmi con lui in qualsiasi momento. Indubbiamente il miglior PM con cui ho lavorato in 5 anni di esperienza."</p>
+            <span class="testi-card__author">Antonio Benedetto · Copywriter</span>
           </div>
           <div class="testi-card testi-card--linkedin">
             <div class="testi-card__header">
@@ -1348,37 +1378,18 @@
               <div class="testi-card__meta">
                 <strong class="testi-card__name">Luigi Bonarrigo</strong>
                 <span class="testi-card__role">Social Media Management · Marketing · Community Manager</span>
-                <span class="testi-card__date">28 maggio 2021 · Stesso team</span>
+                <span class="testi-card__date">maggio 2021 · stesso team</span>
               </div>
               <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
             </div>
             <div class="testi-card__stars">★★★★★</div>
             <p class="testi-card__quote">"Andrea è un vulcano di idee, con un'etica professionale quasi teutonica e una voglia irrefrenabile di essere il migliore in tutto ciò che riguarda il suo lavoro. Altamente competente, super simpatico ed estremamente intelligente, Andrea è decisamente il collega ideale."</p>
-            <span class="testi-card__author">— Luigi Bonarrigo, Social Media Manager · 2021</span>
+            <span class="testi-card__author">Luigi Bonarrigo · Social Media Manager</span>
           </div>
         </div>
-      </div>
 
-      <div class="testi-controls">
-        <div class="testi-dots" id="testi-dots">
-          <button class="testi-dot active" data-index="0" aria-label="Slide 1"></button>
-          <button class="testi-dot" data-index="1" aria-label="Slide 2"></button>
-          <button class="testi-dot" data-index="2" aria-label="Slide 3"></button>
-                  </div>
-        <div class="testi-arrows">
-          <button class="testi-arrow" id="testi-prev" aria-label="Precedente">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4l-4 4 4 4"/></svg>
-          </button>
-          <button class="testi-arrow" id="testi-next" aria-label="Successivo">
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l4 4-4 4"/></svg>
-          </button>
-        </div>
-      </div>
 
-      <div class="rating-row">
-        <div class="stars">★★★★★</div>
-        <p class="note">[X.X/5 — basato su N recensioni su Google / LinkedIn]</p>
-      </div>
+      
     </div>
   </section>
 
@@ -1390,16 +1401,14 @@
         <h2>Ascoltalo direttamente da chi ha lavorato con me</h2>
       </div>
       <div class="video-testi__wrapper fade-up">
-        <!-- Inserisci qui il codice embed del video (YouTube, Vimeo, ecc.) -->
-        <!-- Esempio YouTube: <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
-        <div class="video-testi__placeholder">
-          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-            <circle cx="40" cy="40" r="40" fill="var(--accent)"/>
-            <polygon points="32,24 60,40 32,56" fill="white"/>
-          </svg>
-          <p>Video recensione in arrivo</p>
-        </div>
+        <iframe
+          src="https://www.youtube.com/embed/P32o2__AT00"
+          title="Recensione video di Nicolas"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
+      <p class="video-testi__caption">Recensione di <strong>Nicolas</strong>, WebMaster in team full remote</p>
     </div>
   </section>
 
