@@ -862,7 +862,84 @@
       .testi-card { min-width: 90%; padding: 1.5rem; }
       footer .container { flex-direction: column; text-align: center; }
     }
-  </style>
+  
+  /* ── TESTIMONIANZE LINKEDIN ── */
+  .testi-card--linkedin .testi-card__header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .testi-card__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .testi-card__meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .testi-card__name {
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .testi-card__role {
+    font-size: 0.78rem;
+    color: var(--ink-2);
+  }
+  .testi-card__date {
+    font-size: 0.75rem;
+    color: var(--ink-2);
+    opacity: 0.75;
+  }
+  .testi-card__linkedin-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── VIDEO TESTIMONIANZA ── */
+  .video-testi {
+    background: var(--bg);
+  }
+  .video-testi__wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    aspect-ratio: 16/9;
+    background: #000;
+  }
+  .video-testi__wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+  .video-testi__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: var(--bg-soft);
+    color: var(--ink-2);
+    font-size: 1rem;
+  }
+
+</style>
 </head>
 <body>
 
@@ -1237,25 +1314,47 @@
 
       <div class="testi-slider">
         <div class="testi-track" id="testi-track">
-          <div class="testi-card">
+          <div class="testi-card testi-card--linkedin">
+            <div class="testi-card__header">
+              <div class="testi-card__avatar">LO</div>
+              <div class="testi-card__meta">
+                <strong class="testi-card__name">Luca Orlandini</strong>
+                <span class="testi-card__role">+500 Landing Page &amp; Funnel · FuturImmagine.com</span>
+                <span class="testi-card__date">30 aprile 2025 · Manager diretto</span>
+              </div>
+              <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </div>
             <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"Non avrei mai creduto di riuscire a delegare certe cose senza perdere il controllo. In poche settimane ho recuperato tempo che non avevo da anni."</p>
-            <span class="testi-card__author">— [Nome Cognome, Titolo, Agenzia, Anno]</span>
+            <p class="testi-card__quote">"Ho capito che Andrea era una persona da avere nel team fin dal primo colloquio. La sua energia e la sua voglia di mettersi in gioco superavano qualsiasi altra cosa. Ho deciso di scommettere comunque su di lui perché non potevo lasciarmi sfuggire una persona con un potenziale così evidente. Bene, è stata una delle scelte più azzeccate da quando ho fondato l'energia. Oggi ricopre con piena autonomia e grande efficacia il ruolo di Project Manager. Io come imprenditore non mi occupo più di clickup, di gestire l'ordinarietà e di preoccuparmi per le delivery: è tutto in carico ad Andrea."</p>
+            <span class="testi-card__author">— Luca Orlandini, Founder · FuturImmagine.com · 2025</span>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card--linkedin">
+            <div class="testi-card__header">
+              <div class="testi-card__avatar">AB</div>
+              <div class="testi-card__meta">
+                <strong class="testi-card__name">Antonio Benedetto</strong>
+                <span class="testi-card__role">Copywriter &amp; Consulente LinkedIn Certificato</span>
+                <span class="testi-card__date">1 novembre 2024 · Stesso team</span>
+              </div>
+              <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </div>
             <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"Andrea non è arrivato con soluzioni preconfezionate. Ha ascoltato, capito il nostro contesto, e costruito qualcosa che il team ha adottato subito perché aveva senso."</p>
-            <span class="testi-card__author">— [Nome Cognome, Titolo, Agenzia, Anno]</span>
+            <p class="testi-card__quote">"Lavorare con Andrea significa non avere stress e poter fare meglio e con risultati superiori. Il lunedì in agenzia per me era il terrore — iniziavo a pensarci dalla domenica. Un PM che sa organizzare il lavoro del copy, che sa gestire clienti, che sa come relazionarsi con il team e i superiori fa la DIFFERENZA. Ed Andrea è proprio questo, un PROFESSIONISTA che fa la DIFFERENZA. Grazie a lui, il mio lavoro è perfettamente organizzato, non ci sono mai spiacevoli sorprese e posso confrontarmi con lui in qualsiasi momento. Indubbiamente il miglior PM con cui ho lavorato in 5 anni d'esperienza in agenzia."</p>
+            <span class="testi-card__author">— Antonio Benedetto, Copywriter · 2024</span>
           </div>
-          <div class="testi-card">
+          <div class="testi-card testi-card--linkedin">
+            <div class="testi-card__header">
+              <div class="testi-card__avatar">LB</div>
+              <div class="testi-card__meta">
+                <strong class="testi-card__name">Luigi Bonarrigo</strong>
+                <span class="testi-card__role">Social Media Management · Marketing · Community Manager</span>
+                <span class="testi-card__date">28 maggio 2021 · Stesso team</span>
+              </div>
+              <svg class="testi-card__linkedin-icon" viewBox="0 0 24 24" fill="#0A66C2" width="20" height="20"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.35-1.85 3.58 0 4.24 2.36 4.24 5.43v6.31zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </div>
             <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"La cosa più sorprendente? Il clima nel team è cambiato. Quando i ruoli sono chiari le persone lavorano meglio — e stanno meglio."</p>
-            <span class="testi-card__author">— [Nome Cognome, Titolo, Agenzia, Anno]</span>
-          </div>
-          <div class="testi-card">
-            <div class="testi-card__stars">★★★★★</div>
-            <p class="testi-card__quote">"Temevo fosse l'ennesima consulenza teorica. Invece è sceso in campo con noi. Ha configurato gli strumenti, formato il team, e ci ha lasciato un sistema che usiamo ogni giorno."</p>
-            <span class="testi-card__author">— [Nome Cognome, Titolo, Agenzia, Anno]</span>
+            <p class="testi-card__quote">"Andrea è un vulcano di idee, con un'etica professionale quasi teutonica e una voglia irrefrenabile di essere il migliore in tutto ciò che riguarda il suo lavoro. Altamente competente, super simpatico ed estremamente intelligente, Andrea è decisamente il collega ideale."</p>
+            <span class="testi-card__author">— Luigi Bonarrigo, Social Media Manager · 2021</span>
           </div>
         </div>
       </div>
@@ -1265,8 +1364,7 @@
           <button class="testi-dot active" data-index="0" aria-label="Slide 1"></button>
           <button class="testi-dot" data-index="1" aria-label="Slide 2"></button>
           <button class="testi-dot" data-index="2" aria-label="Slide 3"></button>
-          <button class="testi-dot" data-index="3" aria-label="Slide 4"></button>
-        </div>
+                  </div>
         <div class="testi-arrows">
           <button class="testi-arrow" id="testi-prev" aria-label="Precedente">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 4l-4 4 4 4"/></svg>
@@ -1280,6 +1378,27 @@
       <div class="rating-row">
         <div class="stars">★★★★★</div>
         <p class="note">[X.X/5 — basato su N recensioni su Google / LinkedIn]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCCO 7b — VIDEO TESTIMONIANZA -->
+  <section class="section video-testi">
+    <div class="container">
+      <div class="head fade-up">
+        <span class="eyebrow">Video Testimonianza</span>
+        <h2>Ascoltalo direttamente da chi ha lavorato con me</h2>
+      </div>
+      <div class="video-testi__wrapper fade-up">
+        <!-- Inserisci qui il codice embed del video (YouTube, Vimeo, ecc.) -->
+        <!-- Esempio YouTube: <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe> -->
+        <div class="video-testi__placeholder">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" width="64" height="64">
+            <circle cx="40" cy="40" r="40" fill="var(--accent)"/>
+            <polygon points="32,24 60,40 32,56" fill="white"/>
+          </svg>
+          <p>Video recensione in arrivo</p>
+        </div>
       </div>
     </div>
   </section>
